@@ -18,12 +18,12 @@ export const Container = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
-    max-width: 100%; /* Tablet */
+    max-width: 100%;
     padding: 0 20px;
   }
 
   @media (max-width: 480px) {
-    padding: 0 15px; /* Mobile */
+    padding: 0 15px;
   }
 `;
 
@@ -37,12 +37,12 @@ export const Content = styled.section`
   transition: all 0.3s;
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Altera o layout para coluna no tablet */
+    flex-direction: column;
     height: auto;
   }
 
   @media (max-width: 480px) {
-    box-shadow: none; /* Remove a sombra em telas pequenas */
+    box-shadow: none;
   }
 `;
 
@@ -56,12 +56,12 @@ export const Left = styled.div`
   max-width: 780px;
 
   @media (max-width: 768px) {
-    width: 100%; /* Ocupa toda a largura no tablet */
-    height: 400px; /* Reduz a altura */
+    width: 100%;
+    height: 400px;
   }
 
   @media (max-width: 480px) {
-    height: 200px; /* Altura menor no mobile */
+    height: 200px;
   }
 `;
 
@@ -73,12 +73,12 @@ export const Right = styled.div`
   padding: 80px;
 
   @media (max-width: 768px) {
-    width: 100%; /* O conteúdo direito ocupa 100% da largura no tablet */
-    padding: 40px; /* Reduz o padding */
+    width: 100%;
+    padding: 40px;
   }
 
   @media (max-width: 480px) {
-    padding: 20px; /* Reduz ainda mais o padding no mobile */
+    padding: 20px;
   }
 `;
 
@@ -88,11 +88,11 @@ export const ContainerForm = styled.div`
   width: 420px;
 
   @media (max-width: 768px) {
-    width: 100%; /* Ocupa toda a largura no tablet */
+    width: 100%;
   }
 
   @media (max-width: 480px) {
-    width: 100%; /* Também ocupa toda a largura no mobile */
+    width: 100%;
   }
 `;
 
@@ -103,11 +103,11 @@ export const HeadContainer = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    margin: 12px 0 18px; /* Reduzir margens no tablet */
+    margin: 12px 0 18px;
   }
 
   @media (max-width: 480px) {
-    margin: 8px 0 14px; /* Reduzir margens no mobile */
+    margin: 8px 0 14px;
   }
 `;
 
@@ -123,12 +123,12 @@ export const Title = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 2rem;
-    line-height: 40px; /* Ajustar fonte para tablet */
+    line-height: 40px;
   }
 
   @media (max-width: 480px) {
     font-size: 1.5rem;
-    line-height: 35px; /* Ajustar fonte para mobile */
+    line-height: 35px;
   }
 `;
 
@@ -141,11 +141,11 @@ export const LineHead = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
-    width: 80px; /* Reduzir largura no tablet */
+    width: 80px;
   }
 
   @media (max-width: 480px) {
-    width: 60px; /* Reduzir largura no mobile */
+    width: 60px;
   }
 `;
 
@@ -155,11 +155,11 @@ export const HeadText = styled.p`
   font-weight: 300;
 
   @media (max-width: 768px) {
-    font-size: 0.7rem; /* Reduzir fonte no tablet */
+    font-size: 0.7rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.65rem; /* Reduzir fonte no mobile */
+    font-size: 0.65rem;
   }
 `;
 
@@ -168,11 +168,11 @@ export const InputContainer = styled.div`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    padding: 0 10px; /* Ajustar padding no tablet */
+    padding: 0 10px;
   }
 
   @media (max-width: 480px) {
-    padding: 0 5px; /* Ajustar padding no mobile */
+    padding: 0 5px;
   }
 `;
 
@@ -199,12 +199,12 @@ export const Input = styled.input<{ $inputColor?: string }>`
 
   @media (max-width: 768px) {
     padding: 0.4rem 0.8rem;
-    font-size: 13px; /* Ajustar padding e fonte no tablet */
+    font-size: 13px;
   }
 
   @media (max-width: 480px) {
     padding: 0.3rem 0.6rem;
-    font-size: 12px; /* Ajustar padding e fonte no mobile */
+    font-size: 12px;
   }
 `;
 
@@ -218,11 +218,11 @@ export const ForgotPass = styled.a`
   padding: 14px 0;
 
   @media (max-width: 768px) {
-    font-size: 11px; /* Ajustar tamanho da fonte no tablet */
+    font-size: 11px;
   }
 
   @media (max-width: 480px) {
-    font-size: 10px; /* Ajustar tamanho da fonte no mobile */
+    font-size: 10px;
   }
 `;
 
@@ -246,13 +246,13 @@ export const Button = styled.button`
   }
 
   @media (max-width: 768px) {
-    padding: 18px 0; /* Reduzir padding no tablet */
-    font-size: 15px; /* Ajustar fonte no tablet */
+    padding: 18px 0;
+    font-size: 15px;
   }
 
   @media (max-width: 480px) {
-    padding: 16px 0; /* Reduzir padding no mobile */
-    font-size: 14px; /* Ajustar fonte no mobile */
+    padding: 16px 0;
+    font-size: 14px;
   }
 `;
 
@@ -273,11 +273,11 @@ export const SignContainer = styled.div`
   transition: all 0.2s ease-in-out;
 
   @media (max-width: 768px) {
-    padding: 20px; /* Ajustar padding no tablet */
+    padding: 20px;
   }
 
   @media (max-width: 480px) {
-    padding: 15px; /* Ajustar padding no mobile */
+    padding: 15px;
   }
 `;
 
@@ -291,11 +291,11 @@ export const SignupText = styled.p`
   text-decoration: none;
 
   @media (max-width: 768px) {
-    font-size: 15px; /* Ajustar fonte no tablet */
+    font-size: 15px;
   }
 
   @media (max-width: 480px) {
-    font-size: 14px; /* Ajustar fonte no mobile */
+    font-size: 14px;
   }
 `;
 
@@ -309,10 +309,10 @@ export const SignUp = styled.a`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    font-size: 13px; /* Ajustar fonte no tablet */
+    font-size: 13px;
   }
 
   @media (max-width: 480px) {
-    font-size: 12px; /* Ajustar fonte no mobile */
+    font-size: 12px;
   }
 `;

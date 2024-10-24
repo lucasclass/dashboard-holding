@@ -20,16 +20,14 @@ import {
   SignUp,
   SignupText,
   Title,
-} from "./styles/page";
+} from "./styles/pages";
 
-// Importando o hook de login
 import { useLogin } from "./hooks/useLogin";
 
 export default function Home() {
   const { email, setEmail, password, setPassword, handleLogin } = useLogin();
   const [isNewPassword, setIsNewPassword] = useState(false);
 
-  // Alterna entre o formulário de login e cadastro
   const toggleForm = () => {
     setIsNewPassword(!isNewPassword);
   };
