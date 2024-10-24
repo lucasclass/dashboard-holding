@@ -1,7 +1,5 @@
 import styled from "styled-components";
-
 import rings from "../../../public/assets/aneis.jpg";
-import { AiOutlineLogin } from "react-icons/ai";
 
 export const Section = styled.section`
   display: flex;
@@ -16,6 +14,15 @@ export const Container = styled.div`
   max-width: 1200px;
   padding: 0 10px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    max-width: 100%; /* Tablet */
+    padding: 0 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 15px; /* Mobile */
+  }
 `;
 
 export const Content = styled.section`
@@ -26,6 +33,15 @@ export const Content = styled.section`
   display: flex;
   height: 800px;
   transition: all 0.3s;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Altera o layout para coluna no tablet */
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    box-shadow: none; /* Remove a sombra em telas pequenas */
+  }
 `;
 
 export const Left = styled.div`
@@ -36,6 +52,15 @@ export const Left = styled.div`
   height: 100%;
   width: 50%;
   max-width: 780px;
+
+  @media (max-width: 768px) {
+    width: 100%; /* Ocupa toda a largura no tablet */
+    height: 400px; /* Reduz a altura */
+  }
+
+  @media (max-width: 480px) {
+    height: 200px; /* Altura menor no mobile */
+  }
 `;
 
 export const Right = styled.div`
@@ -44,12 +69,29 @@ export const Right = styled.div`
   width: 50%;
   height: 100%;
   padding: 80px;
+
+  @media (max-width: 768px) {
+    width: 100%; /* O conteúdo direito ocupa 100% da largura no tablet */
+    padding: 40px; /* Reduz o padding */
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px; /* Reduz ainda mais o padding no mobile */
+  }
 `;
 
 export const ContainerForm = styled.div`
   position: relative;
   height: 100%;
   width: 420px;
+
+  @media (max-width: 768px) {
+    width: 100%; /* Ocupa toda a largura no tablet */
+  }
+
+  @media (max-width: 480px) {
+    width: 100%; /* Também ocupa toda a largura no mobile */
+  }
 `;
 
 export const HeadContainer = styled.div`
@@ -57,6 +99,14 @@ export const HeadContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin: 12px 0 18px; /* Reduzir margens no tablet */
+  }
+
+  @media (max-width: 480px) {
+    margin: 8px 0 14px; /* Reduzir margens no mobile */
+  }
 `;
 
 export const Title = styled.h1`
@@ -68,6 +118,16 @@ export const Title = styled.h1`
   line-height: 49px;
   letter-spacing: -0.05rem;
   margin: 16px 0;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    line-height: 40px; /* Ajustar fonte para tablet */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    line-height: 35px; /* Ajustar fonte para mobile */
+  }
 `;
 
 export const LineHead = styled.div`
@@ -77,17 +137,41 @@ export const LineHead = styled.div`
   border-radius: 2px;
   background-color: #6489fa;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 80px; /* Reduzir largura no tablet */
+  }
+
+  @media (max-width: 480px) {
+    width: 60px; /* Reduzir largura no mobile */
+  }
 `;
 
 export const HeadText = styled.p`
   color: #716b84;
   font-size: 0.75rem;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem; /* Reduzir fonte no tablet */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.65rem; /* Reduzir fonte no mobile */
+  }
 `;
 
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 0 10px; /* Ajustar padding no tablet */
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 5px; /* Ajustar padding no mobile */
+  }
 `;
 
 export const Input = styled.input<{ $inputColor?: string }>`
@@ -110,6 +194,16 @@ export const Input = styled.input<{ $inputColor?: string }>`
     border-radius: 5px;
     background-color: #fff;
   }
+
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.8rem;
+    font-size: 13px; /* Ajustar padding e fonte no tablet */
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.3rem 0.6rem;
+    font-size: 12px; /* Ajustar padding e fonte no mobile */
+  }
 `;
 
 export const ForgotPass = styled.a`
@@ -120,6 +214,14 @@ export const ForgotPass = styled.a`
   text-decoration: underline;
   align-self: flex-end;
   padding: 14px 0;
+
+  @media (max-width: 768px) {
+    font-size: 11px; /* Ajustar tamanho da fonte no tablet */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px; /* Ajustar tamanho da fonte no mobile */
+  }
 `;
 
 export const Button = styled.button`
@@ -140,6 +242,16 @@ export const Button = styled.button`
     background-color: #6469fa;
     transition: all 0.3s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    padding: 18px 0; /* Reduzir padding no tablet */
+    font-size: 15px; /* Ajustar fonte no tablet */
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 0; /* Reduzir padding no mobile */
+    font-size: 14px; /* Ajustar fonte no mobile */
+  }
 `;
 
 export const SignContainer = styled.div`
@@ -157,6 +269,14 @@ export const SignContainer = styled.div`
   padding: 24px;
   text-align: center;
   transition: all 0.2s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 20px; /* Ajustar padding no tablet */
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px; /* Ajustar padding no mobile */
+  }
 `;
 
 export const SignupText = styled.p`
@@ -167,6 +287,14 @@ export const SignupText = styled.p`
   line-height: 19.5px;
   margin-bottom: 6px;
   text-decoration: none;
+
+  @media (max-width: 768px) {
+    font-size: 15px; /* Ajustar fonte no tablet */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px; /* Ajustar fonte no mobile */
+  }
 `;
 
 export const SignUp = styled.a`
@@ -177,11 +305,12 @@ export const SignUp = styled.a`
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
   cursor: pointer;
-`;
 
-export const Door = styled(AiOutlineLogin)`
-  color: purple;
-  transform: scale(3);
-  margin: 5%;
-  background-color: gray;
+  @media (max-width: 768px) {
+    font-size: 13px; /* Ajustar fonte no tablet */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px; /* Ajustar fonte no mobile */
+  }
 `;

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 
 import {
   Button,
@@ -20,86 +20,83 @@ import {
   SignUp,
   SignupText,
   Title,
-} from "./styles/pageMaster";
+} from "./styles/page";
 
-import { signIn } from "next-auth/react";
-import { useState } from "react";
+// Importando o hook de login
+import { useLogin } from "./hooks/useLogin";
 
 export default function Home() {
-  const [isForgotPassword, setIsForgotPassword] = useState(false);
+  const { email, setEmail, password, setPassword, handleLogin } = useLogin();
+  const [isNewPassword, setIsNewPassword] = useState(false);
 
+  // Alterna entre o formulário de login e cadastro
   const toggleForm = () => {
-    setIsForgotPassword(!isForgotPassword);
+    setIsNewPassword(!isNewPassword);
   };
 
   return (
-    <>
-      <Section>
-        <Container>
-          <Content>
-            <Left />
-            <Right>
-              <ContainerForm>
-                {isForgotPassword ? (
-                  <>
-                    <HeadContainer>
-                      <HeadText>Já é cliente?</HeadText>
-                      <Title>Acesse sua conta</Title>
-                      <LineHead />
-                    </HeadContainer>
-                    <InputContainer>
-                      <Input type="text" placeholder="Email" />
-                      <Input type="text" placeholder="Password" />
-                      <Link href="/dashboard" passHref>
-                        <Button type="submit">Login</Button>
-                      </Link>
-                      <ForgotPass>Esqueceu sua senha?</ForgotPass>
-                      <button onClick={() => signIn("github")}>
-                        Sign in with Github
-                      </button>
-                      <button onClick={() => signIn("google")}>
-                        Sign in with Google
-                      </button>
-                    </InputContainer>
-                    <SignContainer>
-                      <SignupText>Não possui cadastro?</SignupText>
-                      <SignUp onClick={toggleForm}>
-                        Crie seu cadastro aqui.
-                      </SignUp>
-                    </SignContainer>
-                  </>
-                ) : (
-                  <>
-                    <HeadContainer>
-                      <HeadText>Cadastre-se aqui</HeadText>
-                      <Title>Crie sua conta</Title>
-                      <LineHead />
-                    </HeadContainer>
-                    <InputContainer>
-                      <Input type="text" placeholder="Email" />
-                      <Input type="text" placeholder="Password" />
-                      <Link href="/dashboard" passHref>
-                        <Button type="submit">Login</Button>
-                      </Link>
-                      <ForgotPass>Esqueceu sua senha?</ForgotPass>
-                      <button onClick={() => signIn("github")}>
-                        Sign in with Github
-                      </button>
-                      <button onClick={() => signIn("google")}>
-                        Sign in with Google
-                      </button>
-                    </InputContainer>
-                    <SignContainer>
-                      <SignupText>Já possui cadastro?</SignupText>
-                      <SignUp onClick={toggleForm}>Logue aqui.</SignUp>
-                    </SignContainer>
-                  </>
-                )}
-              </ContainerForm>
-            </Right>
-          </Content>
-        </Container>
-      </Section>
-    </>
+    <Section>
+      <Container>
+        <Content>
+          <Left />
+          <Right>
+            <ContainerForm>
+              {!isNewPassword ? (
+                <>
+                  <HeadContainer>
+                    <HeadText>Já é cliente?</HeadText>
+                    <Title>Acesse sua conta</Title>
+                    <LineHead />
+                  </HeadContainer>
+                  <InputContainer>
+                    <Input
+                      type="text"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email"
+                    />
+                    <Input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="••••••••"
+                    />
+                    <Button type="submit" onClick={handleLogin}>
+                      Login
+                    </Button>
+                    <ForgotPass>Esqueceu sua senha?</ForgotPass>
+                  </InputContainer>
+                  <SignContainer>
+                    <SignupText>Não possui cadastro?</SignupText>
+                    <SignUp onClick={toggleForm}>
+                      Crie seu cadastro aqui.
+                    </SignUp>
+                  </SignContainer>
+                </>
+              ) : (
+                <>
+                  <HeadContainer>
+                    <HeadText>Cadastre-se aqui</HeadText>
+                    <Title>Crie sua conta</Title>
+                    <LineHead />
+                  </HeadContainer>
+                  <InputContainer>
+                    <Input type="text" placeholder="Email" />
+                    <Input type="password" placeholder="••••••••" />
+                    <Input type="password" placeholder="Confirmar senha" />
+                    <Button type="submit">Cadastrar</Button>
+                    <ForgotPass>Esqueceu sua senha?</ForgotPass>
+                  </InputContainer>
+                  <SignContainer>
+                    <SignupText>Já possui cadastro?</SignupText>
+                    <SignUp onClick={toggleForm}>Logue aqui.</SignUp>
+                  </SignContainer>
+                </>
+              )}
+            </ContainerForm>
+          </Right>
+        </Content>
+      </Container>
+    </Section>
   );
 }
