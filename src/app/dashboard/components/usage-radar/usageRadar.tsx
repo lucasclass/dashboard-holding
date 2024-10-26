@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import { ContainerRadar, Section, TitleRadar } from "./styles";
+import { ContainerRadar, ContentRadar, Section, TitleRadar } from "./styles";
 
 const data = [
   {
@@ -56,7 +56,7 @@ export const UsageRadar = () => {
         </TitleRadar>
       </ContainerRadar>
 
-      <div className="h-64 px-4">
+      <ContentRadar className="h-64 px-4">
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
             <PolarGrid />
@@ -83,7 +83,7 @@ export const UsageRadar = () => {
             <Legend />
           </RadarChart>
         </ResponsiveContainer>
-      </div>
+      </ContentRadar>
     </Section>
   );
 };

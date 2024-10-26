@@ -6,6 +6,7 @@ import {
   TextSub,
   TextTitle,
 } from "../styles/plan-styles";
+import Link from "next/link";
 
 export const Plan = () => {
   return (
@@ -16,7 +17,9 @@ export const Plan = () => {
           <TextSub>Pay as you go</TextSub>
         </div>
 
-        <LogOutButton>Sair</LogOutButton>
+        <Link href="/">
+          <LogOutButton>Sair</LogOutButton>
+        </Link>
       </Container>
     </Section>
   );
