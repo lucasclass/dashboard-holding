@@ -56,11 +56,11 @@ export const UsageRadar = () => {
         </TitleRadar>
       </ContainerRadar>
 
-      <ContentRadar className="h-64 px-4">
-        <ResponsiveContainer width="100%" height="100%">
+      <ContentRadar>
+        <ResponsiveContainer>
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
             <PolarGrid />
-            <PolarAngleAxis className="text-xs font-bold" dataKey="feature" />
+            <PolarAngleAxis dataKey="feature" />
             <PolarRadiusAxis angle={30} domain={[0, 150]} />
             <Radar
               name="Mobile"
@@ -76,10 +76,7 @@ export const UsageRadar = () => {
               fill="#5b21b6"
               fillOpacity={0.2}
             />
-            <Tooltip
-              wrapperClassName="text-sm rounded"
-              labelClassName="text-xs text-stone-500"
-            />
+            <Tooltip />
             <Legend />
           </RadarChart>
         </ResponsiveContainer>

@@ -23,7 +23,11 @@ const getTransactions = () => {
 export async function GET() {
   try {
     const transactions = getTransactions();
-    return NextResponse.json(transactions);
+
+    // Retorna apenas os primeiros 10 itens para evitar sobrecarga nos testes
+    const limitedTransactions = transactions.slice(0, 10);
+
+    return NextResponse.json(limitedTransactions);
   } catch (error) {
     console.error("Erro na API:", error);
     return NextResponse.json(

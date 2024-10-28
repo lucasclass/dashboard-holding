@@ -67,7 +67,7 @@ export const ActivityGraph = () => {
       </ContainerAtivity>
 
       <ContainerGraph>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer>
           <LineChart
             width={500}
             height={400}
@@ -84,18 +84,10 @@ export const ActivityGraph = () => {
               dataKey="name"
               axisLine={false}
               tickLine={false}
-              className="text-xs font-bold"
               padding={{ right: 4 }}
             />
-            <YAxis
-              className="text-xs font-bold"
-              axisLine={false}
-              tickLine={false}
-            />
-            <Tooltip
-              wrapperClassName="text-sm rounded"
-              labelClassName="text-xs text-stone-500"
-            />
+            <YAxis axisLine={false} tickLine={false} />
+            <Tooltip />
             <Line
               type="monotone"
               dataKey="New"

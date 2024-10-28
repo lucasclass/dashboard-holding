@@ -18,7 +18,7 @@ const useTransactions = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await fetch("/api/transactions"); // Chamada para a API Route
+        const response = await fetch("/api/transactions");
         if (!response.ok) {
           throw new Error("Erro ao carregar transações");
         }
